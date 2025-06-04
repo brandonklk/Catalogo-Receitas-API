@@ -1,13 +1,13 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { CreateRecipeUseCase } from './create-recipe.usecase';
 import { RecipeRepository } from '../repositories/recipe.repository';
-import { IngredientRepository } from '../repositories/ingredient.repository';
+import { IngredientRepository } from '../../ingredient/repositories/ingredient.repository';
 import { CreateRecipeDto } from '../dtos/create-recipe.dto';
 import {
   BadRequestException,
   InternalServerErrorException,
 } from '@nestjs/common';
-import { Ingredient } from '../entities/ingredient.entity';
+import { Ingredient } from 'src/domain/ingredient/entities/ingredient.entity';
 
 const mockRecipeRepository = () => ({
   create: jest.fn(),

@@ -5,8 +5,8 @@ import {
   ValidateNested,
 } from 'class-validator';
 import { Type } from 'class-transformer';
-import { CreateIngredientDto } from './create-ingredient.dto';
 import { ApiProperty } from '@nestjs/swagger';
+import { CreateIngredientDto } from 'src/domain/ingredient/dtos/create-ingredient.dto';
 
 export class CreateRecipeDto {
   @ApiProperty({ example: 'Bolo de chocolate' })

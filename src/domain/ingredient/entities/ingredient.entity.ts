@@ -1,5 +1,5 @@
+import { Recipe } from 'src/domain/recipe/entities/recipe.entity';
 import { Entity, PrimaryGeneratedColumn, Column, ManyToMany } from 'typeorm';
-import { Recipe } from './recipe.entity';
 
 @Entity('ingredients')
 export class Ingredient {
