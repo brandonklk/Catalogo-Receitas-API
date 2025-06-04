@@ -33,6 +33,16 @@ Projeto desenvolvido com **NestJS** com o objetivo de gerenciar receitas culiná
 
 ---
 
+## 📚 Documentação da API
+
+Foi utilizado o Swagger para documentar a API, para acessar a mesma acesse a seguinte URL:
+
+```bash
+http://localhost:3000/docs
+```
+
+---
+
   
 
 ## 📦 Como Executar o Projeto Localmente
