@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { IngredientRepository } from './ingredient.repository';
+import { InjectRepository } from '@nestjs/typeorm';
 import { Ingredient } from '../entities/ingredient.entity';
+import { IngredientRepository } from './ingredient.repository';
 
 @Injectable()
 export class IngredientImplRepository implements IngredientRepository {

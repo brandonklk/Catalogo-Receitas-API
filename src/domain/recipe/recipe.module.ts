@@ -7,21 +7,15 @@ import { RecipeController } from './controllers/recipe.controller';
 import { CreateRecipeUseCase } from './use-cases/create-recipe.usecase';
 import { GetRecipeByIdUseCase } from './use-cases/get-recipe-by-id.usecase';
 import { ListAllRecipesUseCase } from './use-cases/list-all-recipes.usecase';
-import { IngredientImplRepository } from './repositories/ingredient-impl.repository';
-import { IngredientRepository } from './repositories/ingredient.repository';
-import { Ingredient } from './entities/ingredient.entity';
+import { IngredientModule } from '../ingredient/ingredient.module';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Recipe, Ingredient])],
+  imports: [TypeOrmModule.forFeature([Recipe]), IngredientModule],
   controllers: [RecipeController],
   providers: [
     {
       provide: RecipeRepository,
       useClass: RecipeImplRepository,
-    },
-    {
-      provide: IngredientRepository,
-      useClass: IngredientImplRepository,
     },
     CreateRecipeUseCase,
     GetRecipeByIdUseCase,

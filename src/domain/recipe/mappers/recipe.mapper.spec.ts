@@ -1,7 +1,7 @@
 import { RecipeMapper } from './recipe.mapper';
 import { CreateRecipeDto } from '../dtos/create-recipe.dto';
 import { Recipe } from '../entities/recipe.entity';
-import { Ingredient } from '../entities/ingredient.entity';
+import { Ingredient } from 'src/domain/ingredient/entities/ingredient.entity';
 
 describe('RecipeMapper', () => {
   describe('fromCreateDto', () => {

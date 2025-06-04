@@ -1,3 +1,4 @@
+import { Ingredient } from 'src/domain/ingredient/entities/ingredient.entity';
 import {
   Entity,
   PrimaryGeneratedColumn,
@@ -7,7 +8,6 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import { Ingredient } from './ingredient.entity';
 
 @Entity('recipes')
 export class Recipe {
