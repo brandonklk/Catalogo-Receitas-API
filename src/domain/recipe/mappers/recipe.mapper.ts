@@ -1,6 +1,6 @@
 import { Recipe } from '../entities/recipe.entity';
 import { CreateRecipeDto } from '../dtos/create-recipe.dto';
-import { Ingredient } from '../entities/ingredient.entity';
+import { Ingredient } from 'src/domain/ingredient/entities/ingredient.entity';
 
 export class RecipeMapper {
   static fromCreateDto(createRecipeDto: CreateRecipeDto): Recipe {

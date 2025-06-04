@@ -8,14 +8,14 @@ import { CreateRecipeDto } from '../dtos/create-recipe.dto';
 import { Recipe } from '../entities/recipe.entity';
 import { RecipeRepository } from '../repositories/recipe.repository';
 import { RecipeMapper } from '../mappers/recipe.mapper';
-import { IngredientRepository } from '../repositories/ingredient.repository';
-import { Ingredient } from '../entities/ingredient.entity';
+import { GetIngredientByNameUseCase } from 'src/domain/ingredient/use-cases/get-ingredient-by-name.usecase';
+import { Ingredient } from 'src/domain/ingredient/entities/ingredient.entity';
 
 @Injectable()
 export class CreateRecipeUseCase {
   constructor(
     private readonly recipeRepository: RecipeRepository,
-    private readonly ingredientRepository: IngredientRepository,
+    private readonly getIngredientByNameUseCase: GetIngredientByNameUseCase,
   ) {}
 
   private readonly logger = new Logger(CreateRecipeUseCase.name);
@@ -39,7 +39,7 @@ export class CreateRecipeUseCase {
       const ingredients: Ingredient[] = [];
 
       for (const ingredient of recipe.ingredients) {
-        const existing = await this.ingredientRepository.findByName(
+        const existing = await this.getIngredientByNameUseCase.execute(
           ingredient.name,
         );
 
